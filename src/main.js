@@ -88,7 +88,7 @@ function analyzeSalesData(data, options) {
     sellerStats.forEach((seller, index) => {
         seller.bonus = calculateBonus(index, sellerStats.length, seller);
         seller.top_products = Object.entries(seller.products_sold)
-            .map((sku, quantity) => ({
+            .map(([sku, quantity]) => ({
                 sku,
                 quantity,
             }))
